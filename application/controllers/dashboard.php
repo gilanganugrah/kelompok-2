@@ -1,4 +1,4 @@
-<?php
+<?php if(! defined('BASEPATH')) exit('Akses langsung tidak diperbolehkan'); 
 class Dashboard extends CI_Controller{
 	function __construct()
 	{
@@ -11,13 +11,20 @@ function index()
 	$data = array(
 		'user'=>$ambil_akun,
 		);
-		$stat = $this->session->userdata('level');
-		if($stat=='s_admin'){
+		$stat = $this->session->userdata('lvl');
+		if($stat=='dosen'){
+			$this->load->view('admin/dashboard_admin',$data);
+		}
+		if($stat=='reviewer'){
+			$this->load->view('admin/dashboard_admin',$data);
+		}
+		if($stat=='admin'){
 			$this->load->view('admin/dashboard_admin',$data);
 		}else{
 			$this->load->view('user/dashboard_user',$data);
 		}
 	}
+	
 	function login()
 	{
 		$session = $this->session->userdata('isLogin');
