@@ -14,6 +14,7 @@ if($this->session->userdata('username') == ""){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/logo polije.png"/>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->

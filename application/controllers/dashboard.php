@@ -14,6 +14,15 @@ function index()
 		$stat = $this->session->userdata('lvl');
 		if($stat=='admin'){
 			$this->load->view('admin/dashboard_admin',$data);
+		}
+		else if($stat=='mahasiswa'){
+			$this->load->view('user/dashboard_user',$data);
+		}
+		else if($stat=='dosen'){
+			$this->load->view('user/dashboard_user',$data);
+		}
+		else if($stat=='reviewer'){
+			$this->load->view('user/dashboard_user',$data);
 		}else{
 			$this->load->view('user/dashboard_user',$data);
 		}

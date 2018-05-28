@@ -13,6 +13,7 @@ if($this->session->userdata('username') == ""){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/logo polije.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -43,6 +44,8 @@ if($this->session->userdata('username') == ""){
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">MASTER</h3><!-- /.menu-title -->
+                    
+                    <?php if($this->session->userdata('lvl') === 'mahasiswa'): ?>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Mahasiswa</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -51,14 +54,12 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Hasil Review</a></li>
                             <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Pengajuan Judul FIX</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Hasil Judul FIX</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>
-                            
-                            
-                            
-                            
-                          
+                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>  
+
                         </ul>
                     </li>
+                    <?php endif; ?>
+                    <?php if($this->session->userdata('lvl') === 'dosen'): ?>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Dosen</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -68,6 +69,8 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-fire"></i><a href="ui-modals.html">Input Dospem Mahasiswa</a></li>
                         </ul>
                     </li>
+                    <?php endif; ?>
+                    <?php if($this->session->userdata('lvl') === 'reviewer'): ?>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Riviewer</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -78,6 +81,8 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-puzzle-piece"></i><a href="forms-basic.html">Review Judul</a></li>
                         </ul>
                     </li>
+                    <?php endif; ?>
+                     <?php if($this->session->userdata('lvl') === 'koordinator'): ?>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Koordinator</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -108,7 +113,7 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-file-word-o"></i><a href="font-fontawesome.html">Cetak Laporan</a>        
                         </ul>
                     </li>
-                    
+                    <?php endif; ?>
                     <h3 class="menu-title">LOGOUT</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sign-in"></i>Logout</a>
