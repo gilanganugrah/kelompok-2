@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Mei 2018 pada 04.55
+-- Generation Time: 28 Mei 2018 pada 05.24
 -- Versi Server: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -57,7 +57,7 @@ CREATE TABLE `login` (
   `email` varchar(225) NOT NULL,
   `username` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
-  `level` enum('admin','mahasiswa','dosen','reviewer') NOT NULL,
+  `level` enum('admin','mahasiswa','dosen','reviewer','koordinator') NOT NULL,
   `nama` varchar(112) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -66,7 +66,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_login`, `email`, `username`, `password`, `level`, `nama`) VALUES
-(16, 'ucihagilang74@gmail.com', 'admin', '123', 'mahasiswa', 'gilang');
+(1, 'ucihagilang74@gmail.com', 'admin', '123', 'admin', 'Gilang');
 
 -- --------------------------------------------------------
 
@@ -197,8 +197,7 @@ ALTER TABLE `dosen`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`username`),
-  ADD KEY `id` (`id_login`);
+  ADD PRIMARY KEY (`id_login`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -266,7 +265,7 @@ ALTER TABLE `bimbingan`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `penelitian`
 --
@@ -307,8 +306,7 @@ ALTER TABLE `bimbingan`
 -- Ketidakleluasaan untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `mahasiswa_ibfk_2` FOREIGN KEY (`id_login`) REFERENCES `login` (`id_login`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `penelitian`

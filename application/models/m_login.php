@@ -28,6 +28,10 @@ class M_login extends CI_Model{
 		$query = $this->db->query("SELECT * FROM login");
 		return $query->result();
 	}
+	function cek_username($admin){
+		$query = $this->db->query("select count(*) from login where username = '$admin'");	
+		return $query->result();
+	}
 	function input($data = array()){
 		return $this->db->insert('login',$data);
 		//return $this->db->update('tm_mahasiswa',$data);

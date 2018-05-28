@@ -41,12 +41,19 @@ class Login extends CI_Controller{
 				redirect('dashboard','refresh');
 			}
 		}else{
-			echo "<script> alert('Username dan Password tidak valid!')</script>";
+			echo "<script>alert('Username dan Password tidak valid!')</script>";
 			redirect('login','refresh');
 		}
 	}
 	function input(){
 		if (isset($_POST['btnTambah'])){
+			$cek_a = $this->input->post('username');
+			$cek_b = $this->m_login->cek_username($cek_a);
+			if(count($cek_b) == 1){
+			echo "<script> alert('Username Sudah ada DUDE!!')</script>";
+			redirect('login/register_form','refresh');
+			}
+			else{
 			$data = $this->m_login->input(array (
 			'id_login' => $this->input->post('id_login'),
 			'nama' => $this->input->post('nama'),
@@ -54,11 +61,11 @@ class Login extends CI_Controller{
 			'level' => $this->input->post('level'),
 			'password' => $this->input->post('password'),
 			'username' => $this->input->post('username')));
-			echo "<script> alert('Anda Berhasil Daftar Dude!!')</script>";
+			echo "<script> alert('Anda Berhasil Daftar DUDE!!')</script>";
 			redirect('login/index','refresh');	
-			
+			}
 		}else{
-			echo "<script> alert('Username dan Password tidak valid!')</script>";
+			echo "<script> alert('Username dan Password tidak valid!!')</script>";
 			redirect('login/register_form','refresh');
 		}
 	}

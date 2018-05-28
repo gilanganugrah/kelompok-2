@@ -12,12 +12,6 @@ function index()
 		'user'=>$ambil_akun,
 		);
 		$stat = $this->session->userdata('lvl');
-		if($stat=='dosen'){
-			$this->load->view('admin/dashboard_admin',$data);
-		}
-		if($stat=='reviewer'){
-			$this->load->view('admin/dashboard_admin',$data);
-		}
 		if($stat=='admin'){
 			$this->load->view('admin/dashboard_admin',$data);
 		}else{
