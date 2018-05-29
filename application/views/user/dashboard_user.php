@@ -50,9 +50,10 @@ if($this->session->userdata('username') == ""){
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Mahasiswa</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Daftar Mahasiswa</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Input Judul TA</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url('inputTA/index');?>">Input Judul TA</a></li>
+                            <li><i class="fa fa-table"></i><a href="tables-data.html">Daftar Judul Dosen</a></li>
                             <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Hasil Review</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Pengajuan Judul FIX</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index');?>">Pengajuan Judul FIX</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Hasil Judul FIX</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>  
 
