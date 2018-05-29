@@ -6,8 +6,12 @@ class m_daftar_judul extends CI_Model {
     }
     
 	function get_data(){
-		$query = $this->db->query("SELECT * FROM penelitian");
-		return $query->result();
+	
+	$this->db->select('penelitian.*, dosen.nama_dosen'); 
+    $this->db->from('penelitian'); 
+    $this->db->join('dosen', 'dosen.nip = penelitian.nip', 'left');
+    $data = $this->db->get(); 
+    return $data->result(); 
 	}
 	}
 ?>

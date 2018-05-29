@@ -10,10 +10,10 @@
 				<tr>
 				<th>No</th>
 					<th>ID</th>
-					<th>Judul Penlitian</th>
+					<th>Judul Penelitian</th>
 					<th>Kuota</th>
 					<th>NIP</th>
-	
+					<th>Nama Dosen</th>
 					<th colspan="2"></th>
 				</tr>
 				<?php
@@ -25,8 +25,10 @@
 					<td><?php echo $row->judul_penelitian;?></td>
 					<td><?php echo $row->kuota;?></td>
 					<td><?php echo $row->nip;?></td>
+					<td><?php echo $row->nama_dosen;?></td>
 					
 				</tr>
+				
 				<?php $no++;
                 endforeach;?>
 			</table>
