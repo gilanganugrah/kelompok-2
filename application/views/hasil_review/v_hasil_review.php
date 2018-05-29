@@ -11,6 +11,8 @@
 				<th>No</th>
 					<th>ID</th>
 					<th>NIM</th>
+					<th>Nama</th>
+					<th>GOL</th>
 					<th>Judul</th>
 					<th>deskripsi</th>
 					<th>Hasil Review</th>
@@ -24,6 +26,8 @@
 					<td><?php echo $no;?></td>
 					<td><?php echo $row->id_review;?></td>
 					<td><?php echo $row->nim;?></td>
+					<td><?php echo $row->nama;?></td>
+					<td><?php echo $row->gol;?></td>
 					<td><?php echo $row->judul;?></td>
 					<td><?php echo $row->deskripsi;?></td>
 					<td><?php echo $row->hasil_review;?></td>
