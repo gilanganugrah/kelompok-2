@@ -26,6 +26,7 @@ function index()
 		}else{
 			$this->load->view('user/dashboard_user',$data);
 		}
+		$this->load->view('user/header');
 	}
 	
 	function login()

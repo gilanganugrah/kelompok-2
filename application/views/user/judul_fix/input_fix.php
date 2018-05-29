@@ -23,29 +23,31 @@
 					</span>
                     <div class="wrap-input100 validate-input">
 						<span class="label-input100">Judul</span>
-						<input class="input100" type="text" name="nama" placeholder="Nama Lengkap...">
+						<input class="input100" type="text" name="judul" placeholder="Judul...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Tgl Input</span>
-						<input class="input100" type="date" name="email">
+						<input class="input100" type="date" name="tgl_input">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
-						<span class="label-input100">Nama Mahasiswa</span>
-						<input class="input100" type="text" name="username" placeholder="Nama...">
+						<span class="label-input100">Nama Mahasiswa</span><br><br>
+						<select name="nama">
+        				<?php foreach ($nama as $row){ ?>
+        				<option value="<?php echo $row->nim;?>"> <?php echo $row->nama;?></option>
+        				<?php }?>
+        				</select>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Nama Dosen</span><br><br>
-
-						<select name="prodi">
-                        <option value="">---</option>
-        				<?php foreach ($prodi as $row){ ?>
-        				<option value="<?php echo $row->id;?>"><?php echo $row->prodi;?></option>
+						<select name="nama_dosen">
+        				<?php foreach ($nama_dosen as $row){ ?>
+        				<option value="<?php echo $row->nip;?>"> <?php echo $row->nama_dosen;?></option>
         				<?php }?>
         				</select>
 						
@@ -53,10 +55,10 @@
                     
 						<div class="wrap-input100 validate-input">
 						<span class="label-input100">Judul Penelitian Dosen</span><br><br>
-						<select name="prodi">
+						<select name="judul_penelitian">
                         <option value="">---</option>
-        				<?php foreach ($prodi as $row){ ?>
-        				<option value="<?php echo $row->id;?>"><?php echo $row->prodi;?></option>
+        				<?php foreach ($data as $row){ ?>
+        				<option value="<?php echo $row->id_penelitian;?>"><?php echo $row->judul_penelitian;?></option>
         				<?php }?>
         				</select>
 						<span class="focus-input100"></span>

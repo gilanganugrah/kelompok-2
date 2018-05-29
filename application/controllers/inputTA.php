@@ -6,7 +6,9 @@ class inputTA extends CI_Controller{
 		$this->load->model('m_inputTA');
 	}
 	function index(){
-		$this->load->view('input/v_inputTA');
+		$this->load->view('user/dashboard_user');
+		$this->load->view('user/header');
+		$this->load->view('input/inputTA');
 	}
 	}
 	
@@ -26,10 +28,9 @@ class inputTA extends CI_Controller{
 				'judul_penelitian'=>$this->m_inputTA->get_penelitian()
 				);
 			//var_dump($x);
-			$this->load->view('input/v_inputTA',$data);
+			$this->load->view('input/inputTA',$data);
 		}
 	}
-	
-	
+
 ?>
 	
