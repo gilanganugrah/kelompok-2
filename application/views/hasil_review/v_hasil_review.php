@@ -9,7 +9,6 @@
 			<table border="1">
 				<tr>
 				<th>No</th>
-					<th>ID</th>
 					<th>NIM</th>
 					<th>Nama</th>
 					<th>GOL</th>
@@ -24,7 +23,6 @@
                 foreach ($data as $row): ?>
 				<tr>
 					<td><?php echo $no;?></td>
-					<td><?php echo $row->id_review;?></td>
 					<td><?php echo $row->nim;?></td>
 					<td><?php echo $row->nama;?></td>
 					<td><?php echo $row->gol;?></td>

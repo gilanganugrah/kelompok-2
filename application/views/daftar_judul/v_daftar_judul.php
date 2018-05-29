@@ -9,7 +9,6 @@
 			<table border="1">
 				<tr>
 				<th>No</th>
-					<th>ID</th>
 					<th>Judul Penelitian</th>
 					<th>Kuota</th>
 					<th>NIP</th>
@@ -21,7 +20,6 @@
                 foreach ($data as $row): ?>
 				<tr>
 					<td><?php echo $no;?></td>
-					<td><?php echo $row->id_penelitian;?></td>
 					<td><?php echo $row->judul_penelitian;?></td>
 					<td><?php echo $row->kuota;?></td>
 					<td><?php echo $row->nip;?></td>
