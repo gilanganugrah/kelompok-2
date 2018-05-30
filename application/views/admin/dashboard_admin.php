@@ -48,19 +48,15 @@ if($this->session->userdata('username') == ""){
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Mahasiswa</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Daftar Mahasiswa</a></li>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_judul/index');?>">Daftar Judul Dosen</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url('inputTA/index');?>">Input Judul TA</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Daftar Judul Dosen</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Hasil Review</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Pengajuan Judul FIX</a></li>
+                            <li><i class="fa fa-bars"></i><a href="<?php echo base_url('hasil_review/index');?>">Hasil Review</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index');?>">Pengajuan Judul FIX</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Hasil Judul FIX</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>
-                            
-                            
-                            
-                            
-                          
+                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>  
+
                         </ul>
-                    </li>
+                        </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Dosen</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -127,43 +123,7 @@ if($this->session->userdata('username') == ""){
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
-        <header id="header" class="header">
-
-            <div class="header-menu">
-
-                <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
-
-                        
-
-
-
-        </header><!-- /header -->
-        <!-- Header-->
-
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
-            </div>
-                         
-
-        </div> <!-- .content -->
-    </div><!-- /#right-panel -->
+    
 
     <!-- Right Panel -->
 

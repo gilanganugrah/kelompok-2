@@ -1,47 +1,82 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Form Untuk Input Judul Tugas Akhir</title>
-</head>
-<body>
-	<center>
-		<h1>Frm Untuk Input Judul Tugas Akhir</h1>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
 	
-	</center>
-	<form action="<?php echo base_url(). 'inputTA/tambah_aksi'; ?>" method="post">
-		<table style="margin:20px auto;">
-			<tr>
-				<td>Judul</td>
-				<td><input type="text" name="judul"></td>
-			</tr>
-			<tr>
-				<td>Tanggal</td>
-				<td><input type="text" name="tanggal"></td>
-			</tr>
-			<tr>
-				<td>Deskripsi</td>
-				<td><input type="text" name="deskripsi"></td>
-			</tr>
-			<tr>
-			
-			<td>NIM</td>
-				<td><input type="text" name="nim"></td>
-			</tr>
-			<tr>
-			
-			<td>NIP Dospem</td>
-				<td><input type="text" name="nip"></td>
-			</tr>
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+				<form class="login100-form validate-form" method="post" action="<?php echo base_url(). 'inputTA/tambah_aksi'; ?>">
+					<span class="login100-form-title p-b-59">
+						INPUT JUDUL TA
+					</span>
+					<div class="wrap-input100 validate-input" data-validate = "judul Harap Diisi">
+						<span class="label-input100">Judul</span>
+						<input class="input100" type="text" name="judul" placeholder="Judul...">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "TGL Harap Diisi">
+						<span class="label-input100">Tgl Input</span>
+						<input class="input100" type="date" name="tgl_input">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "judul Harap Diisi">
+						<span class="label-input100">Deskripsi</span>
+						<input class="input100" type="text" name="deskripsi" placeholder="Deskripsi...">
+						<span class="focus-input100"></span>
+					</div>
 			<tr>
 			
-			<td>ID Judul penelitian</td>
-				<td><input type="text" name="id_penelitian"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Tambah"></td>
-			</tr>
-		</table>
-	</form>	
-</body>
-</html>
+			<div class="wrap-input100 validate-input" data-validate = "Nama Harap Diisi">
+						<span class="label-input100">Nama Mahasiswa</span><br><br>
+						<select name="nama">
+                        <option>	</option>
+        				<?php foreach ($nim as $row): ?>
+        				<option value="<?php echo $row->nim;?>"> <?php echo $row->nama ?></option>
+        				<?php endforeach;?>
+        				</select>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Nama Dosen Harap Diisi">
+						<span class="label-input100">Nama Dosen</span><br><br>
+						<select name="nama_dosen">
+                        <option>	</option>
+        				<?php foreach ($nip as $row){ ?>
+        				<option value="<?php echo $row->nip;?>"> <?php echo $row->nama_dosen;?></option>
+        				<?php }?>
+        				</select>
+						
+					</div>
+                    
+						<div class="wrap-input100 validate-input" data-validate = "Judul Peneliltian Dosen Harap Diisi">
+						<span class="label-input100">Judul Penelitian Dosen</span><br><br>
+						<select name="judul_penelitian">
+                        <option>	</option>
+        				<?php foreach ($id_penelitian as $row){ ?>
+        				<option value="<?php echo $row->id_penelitian;?>"><?php echo $row->judul_penelitian;?></option>
+        				<?php }?>
+        				</select>
+						<span class="focus-input100"></span>
+					</div>
+                        
+                        	
+				
+					<div class="flex-m w-full p-b-33">
+						<div class="contact100-form-checkbox">
+								</span>
+							</label>
+						</div>
+	
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit" name="btnTambah">
+								Daftar
+							</button>
+						</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+    <script src="<?php echo base_url(''); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo base_url(''); ?>assets/js/main.js"></script>

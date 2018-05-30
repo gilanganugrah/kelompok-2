@@ -8,7 +8,7 @@ class inputTA extends CI_Controller{
 	function index(){
 		$this->load->view('user/dashboard_user');
 		$this->load->view('user/header');
-		$this->load->view('input/inputTA');
+		$this->load->view('input/v_inputTA');
 	}
 	}
 	
@@ -28,7 +28,7 @@ class inputTA extends CI_Controller{
 				'judul_penelitian'=>$this->m_inputTA->get_penelitian()
 				);
 			//var_dump($x);
-			$this->load->view('input/inputTA',$data);
+			$this->load->view('input/v_inputTA',$data);
 		}
 	}
 

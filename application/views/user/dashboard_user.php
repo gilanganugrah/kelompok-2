@@ -12,7 +12,7 @@ if($this->session->userdata('username') == ""){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
+    <title>Web</title>
     <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/logo polije.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -48,10 +48,9 @@ if($this->session->userdata('username') == ""){
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Mahasiswa</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Daftar Mahasiswa</a></li>
+                         <li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_judul/index');?>">Daftar Judul Dosen</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url('inputTA/index');?>">Input Judul TA</a></li>
-                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_judul/index');?>">Daftar Judul Dosen</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Hasil Review</a></li>
+                            <li><i class="fa fa-bars"></i><a href="<?php echo base_url('hasil_review/index');?>">Hasil Review</a></li>
                             <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index');?>">Pengajuan Judul FIX</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Hasil Judul FIX</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>  

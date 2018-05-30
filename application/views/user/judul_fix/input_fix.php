@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Daftar</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/logo polije.png"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
@@ -21,43 +9,50 @@
 					<span class="login100-form-title p-b-59">
 						INPUT JUDUL FIX
 					</span>
-                    <div class="wrap-input100 validate-input">
+                    <div class="wrap-input100 validate-input" data-validate = "judul Harap Diisi">
 						<span class="label-input100">Judul</span>
 						<input class="input100" type="text" name="judul" placeholder="Judul...">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100 validate-input" data-validate = "TGL Harap Diisi">
 						<span class="label-input100">Tgl Input</span>
 						<input class="input100" type="date" name="tgl_input">
 						<span class="focus-input100"></span>
 					</div>
+                    <div class="wrap-input100 validate-input" data-validate = "judul Harap Diisi">
+						<span class="label-input100">Deskripsi</span>
+						<input class="input100" type="text" name="deskripsi" placeholder="Deskripsi...">
+						<span class="focus-input100"></span>
+					</div>
 
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100 validate-input" data-validate = "Nama Harap Diisi">
 						<span class="label-input100">Nama Mahasiswa</span><br><br>
 						<select name="nama">
-        				<?php foreach ($nama as $row){ ?>
-        				<option value="<?php echo $row->nim;?>"> <?php echo $row->nama;?></option>
-        				<?php }?>
+                        <option>	</option>
+        				<?php foreach ($nim as $row): ?>
+        				<option value="<?php echo $row->nim;?>"> <?php echo $row->nama ?></option>
+        				<?php endforeach;?>
         				</select>
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100 validate-input" data-validate = "Nama Dosen Harap Diisi">
 						<span class="label-input100">Nama Dosen</span><br><br>
 						<select name="nama_dosen">
-        				<?php foreach ($nama_dosen as $row){ ?>
+                        <option>	</option>
+        				<?php foreach ($nip as $row){ ?>
         				<option value="<?php echo $row->nip;?>"> <?php echo $row->nama_dosen;?></option>
         				<?php }?>
         				</select>
 						
 					</div>
                     
-						<div class="wrap-input100 validate-input">
+						<div class="wrap-input100 validate-input" data-validate = "Judul Peneliltian Dosen Harap Diisi">
 						<span class="label-input100">Judul Penelitian Dosen</span><br><br>
 						<select name="judul_penelitian">
-                        <option value="">---</option>
-        				<?php foreach ($data as $row){ ?>
+                        <option>	</option>
+        				<?php foreach ($id_penelitian as $row){ ?>
         				<option value="<?php echo $row->id_penelitian;?>"><?php echo $row->judul_penelitian;?></option>
         				<?php }?>
         				</select>
@@ -83,24 +78,8 @@
 						</div>
 
 				</form>
-
-	
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(''); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(''); ?>assets/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(''); ?>assets/vendor/bootstrap/js/popper.js"></script>
-	<script src="<?php echo base_url(''); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(''); ?>assets/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(''); ?>assets/vendor/daterangepicker/moment.min.js"></script>
-	<script src="<?php echo base_url(''); ?>assets/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(''); ?>assets/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
+			</div>
+		</div>
+	</div>
+    <script src="<?php echo base_url(''); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<?php echo base_url(''); ?>assets/js/main.js"></script>
-
-</body>
-</html>
