@@ -6,8 +6,8 @@ class inputTA extends CI_Controller{
 		$this->load->model('m_inputTA');
 	}
 	function index(){
-		$this->load->view('user/dashboard_user');
-		$this->load->view('user/header');
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
 		$this->load->view('input/v_inputTA');
 	}
 	}

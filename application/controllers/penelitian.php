@@ -6,8 +6,8 @@ class penelitian extends CI_Controller{
 		$this->load->model('m_judul_penelitian');
 	}
 	function index(){
-		$this->load->view('user/dashboard_user');
-		$this->load->view('user/header');
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
 		$this->load->view('penelitian/v_penelitian');
 	}
 	function home(){

@@ -10,8 +10,8 @@ class hasil_review extends CI_Controller{
 	function index(){
 	$data = array(
 		'data'=>$this->m_hasil_review->get_data());
-		$this->load->view('user/dashboard_user');
-		$this->load->view('user/header');
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
 		$this->load->view('hasil_review/v_hasil_review',$data);
 	}
 	}

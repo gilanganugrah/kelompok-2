@@ -20,4 +20,5 @@ class control_grafik extends CI_Controller {
     
    $this->load->view('view_grafik', $data); 
  }
+}
 ?> 

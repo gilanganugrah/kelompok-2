@@ -1,7 +1,7 @@
-		<div class="col-lg-20">
+<div class="col-lg-20">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Form Melihat Mahasiswa Yang Memilih Pembimbing</strong>
+                            <strong class="card-title">Daftar Data Mahasiswa</strong>
                         </div>
                         <div class="card-body">
                             <table class="table">
@@ -9,11 +9,11 @@
 				<tr>
 				<th>No</th>
 					<th>NIM</th>
-                    <th>Nama</th>
-                    <th>Gol</th>
-                    <th>Judul</th>
-					<th>Nama Pembimbing</th>
-					<th colspan="2"></th>
+					<th>Nama</th>
+					<th>GOL</th>
+					<th>Prodi</th>
+					<th>ID Login</th>
+					
 				</tr>
 				<?php
                 $no = 1;
@@ -22,15 +22,16 @@
 					<td><?php echo $no;?></td>
 					<td><?php echo $row->nim;?></td>
 					<td><?php echo $row->nama;?></td>
-                    <td><?php echo $row->gol;?></td>
-					<td><?php echo $row->judul;?></td>
-                    <td><?php echo $row->nama_dosen;?></td>
+					<td><?php echo $row->gol;?></td>
+					<td><?php echo $row->nama_prodi;?></td>
+					<td><?php echo $row->username;?></td>
+			
 					
 				</tr>
 				
 				<?php $no++;
                 endforeach;?>
 			</table>
-		</p>
-	</body>
-</html>
+ </div>
+                    </div>
+                </div>

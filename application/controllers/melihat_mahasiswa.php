@@ -10,6 +10,8 @@ class melihat_mahasiswa extends CI_Controller{
 	function index(){
 	$data = array(
 		'data'=>$this->m_melihat_mahasiswa->get_data());
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
 		$this->load->view('look_mahasiswa/v_melihat_mahasiswa',$data);
 	}
 	}

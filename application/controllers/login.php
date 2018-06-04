@@ -32,11 +32,14 @@ class Login extends CI_Controller{
 			foreach ($cek as $cek){
 				$level = $cek['level'];
 				$nama = $cek['nama'];
+				$id_login = $cek['id_login'];
+				$username = $cek['username'];
 				$this->session->set_userdata(array(
 				'isLogin' => TRUE,
 				'uname' => $username,
 				'lvl' => $level,
 				'nama' => $nama,
+				'id_login' => $id_login,
 				));
 				redirect('dashboard','refresh');
 			}

@@ -12,21 +12,20 @@ function index()
 		'user'=>$ambil_akun,
 		);
 		$stat = $this->session->userdata('lvl');
-		if($stat=='admin'){
-			$this->load->view('admin/dashboard_admin',$data);
+		if($stat=='koordinator'){
+			$this->load->view('dashboard_user',$data);
 		}
 		else if($stat=='mahasiswa'){
-			$this->load->view('user/dashboard_user',$data);
+			$this->load->view('dashboard_user',$data);
 		}
 		else if($stat=='dosen'){
-			$this->load->view('user/dashboard_user',$data);
+			$this->load->view('dashboard_user',$data);
 		}
 		else if($stat=='reviewer'){
-			$this->load->view('user/dashboard_user',$data);
-		}else{
-			$this->load->view('user/dashboard_user',$data);
+			$this->load->view('dashboard_user',$data);
+		}else{	
 		}
-		$this->load->view('user/header');
+		$this->load->view('header');
 	}
 	
 	function login()

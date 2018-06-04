@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30 Mei 2018 pada 09.27
+-- Generation Time: 04 Jun 2018 pada 09.20
 -- Versi Server: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -71,7 +71,7 @@ CREATE TABLE `login` (
   `email` varchar(225) NOT NULL,
   `username` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
-  `level` enum('admin','mahasiswa','dosen','reviewer','koordinator') NOT NULL,
+  `level` enum('mahasiswa','dosen','reviewer','koordinator') NOT NULL,
   `nama` varchar(112) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -81,7 +81,7 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_login`, `email`, `username`, `password`, `level`, `nama`) VALUES
 (17, 'ucihagilang74@gmail.com', 'admin', '123', 'mahasiswa', 'admin'),
-(18, 'ucihagilang74@gmail.com', 'E31160622', '123', 'admin', 'Gilang Anugrah'),
+(18, 'ucihagilang74@gmail.com', 'E31160622', '123', 'koordinator', 'Gilang Anugrah'),
 (19, 'ucihagilang74@gmail.com', 'dosen', '123', 'dosen', 'Pak Dosen');
 
 -- --------------------------------------------------------
@@ -103,6 +103,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `gol`, `id_prodi`, `id_login`) VALUES
+('E089132', 'Dayat', 'B', 2, 17),
+('E31160607', 'Gilang', 'B', 1, 17),
 ('E31160622', 'Gilang', 'B', 1, 17);
 
 -- --------------------------------------------------------
