@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Jun 2018 pada 09.20
--- Versi Server: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- Generation Time: 22 Jun 2018 pada 08.35
+-- Versi Server: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,6 +41,27 @@ CREATE TABLE `bimbingan` (
 
 INSERT INTO `bimbingan` (`id_bimbingan`, `id_ta`, `nim`, `nip`) VALUES
 (1, 2, 'E31160622', '12344');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `deadline`
+--
+
+CREATE TABLE `deadline` (
+  `id_jadwal` varchar(225) NOT NULL,
+  `nm_jadwal` varchar(225) NOT NULL,
+  `tgl_input` date NOT NULL,
+  `tgl_batas` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `deadline`
+--
+
+INSERT INTO `deadline` (`id_jadwal`, `nm_jadwal`, `tgl_input`, `tgl_batas`) VALUES
+('01', 'Penginputan Judul', '2018-06-01', '2018-06-22'),
+('02', 'Batas Penginputan Judul', '2018-06-24', '2018-06-29');
 
 -- --------------------------------------------------------
 
@@ -251,6 +272,12 @@ ALTER TABLE `bimbingan`
   ADD KEY `id_ta` (`id_ta`);
 
 --
+-- Indexes for table `deadline`
+--
+ALTER TABLE `deadline`
+  ADD PRIMARY KEY (`id_jadwal`);
+
+--
 -- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
@@ -324,41 +351,49 @@ ALTER TABLE `ta_final`
 --
 ALTER TABLE `bimbingan`
   MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT for table `penelitian`
 --
 ALTER TABLE `penelitian`
   MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
   MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `proposal`
 --
 ALTER TABLE `proposal`
   MODIFY `id_proposal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
   MODIFY `id_review` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `ta`
 --
 ALTER TABLE `ta`
   MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `ta_final`
 --
 ALTER TABLE `ta_final`
   MODIFY `id_final` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
