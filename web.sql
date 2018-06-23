@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22 Jun 2018 pada 08.35
+-- Generation Time: 23 Jun 2018 pada 06.16
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -61,7 +61,8 @@ CREATE TABLE `deadline` (
 
 INSERT INTO `deadline` (`id_jadwal`, `nm_jadwal`, `tgl_input`, `tgl_batas`) VALUES
 ('01', 'Penginputan Judul', '2018-06-01', '2018-06-22'),
-('02', 'Batas Penginputan Judul', '2018-06-24', '2018-06-29');
+('02', 'Batas Penginputan Judul', '2018-06-24', '2018-06-29'),
+('03', 'aku', '2018-09-01', '2018-09-02');
 
 -- --------------------------------------------------------
 
@@ -71,15 +72,17 @@ INSERT INTO `deadline` (`id_jadwal`, `nm_jadwal`, `tgl_input`, `tgl_batas`) VALU
 
 CREATE TABLE `dosen` (
   `nip` varchar(20) NOT NULL,
-  `nama_dosen` varchar(225) NOT NULL
+  `nama_dosen` varchar(225) NOT NULL,
+  `prodi` varchar(225) NOT NULL,
+  `kuota` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `dosen`
 --
 
-INSERT INTO `dosen` (`nip`, `nama_dosen`) VALUES
-('12344', 'Supri');
+INSERT INTO `dosen` (`nip`, `nama_dosen`, `prodi`, `kuota`) VALUES
+('12344', 'Supri', 'mif', '0');
 
 -- --------------------------------------------------------
 
