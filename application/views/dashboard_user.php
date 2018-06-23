@@ -98,7 +98,7 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-book"></i><a href="ui-switches.html">Pergantian Hak Akses Dosen</a></li>
 							<li><i class="fa fa-table"></i><a href="<?php echo base_url('tgl_judul/index');?>">Penentuan Tgl Input Judul</a></li>
                             <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Penentuan Dospem Mahasiswa</a></li>
-                            <li><i class="fa fa-table"></i><a href="font-themify.html">Penentuan Jumlah MAX Dosen</a></li>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('kuota_dospem/index');?>">Penentuan Jumlah MAX Dosen</a></li>
                         </ul>
                     </li>
 
