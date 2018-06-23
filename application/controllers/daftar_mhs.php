@@ -44,4 +44,9 @@ class daftar_mhs extends CI_Controller{
 			$this->load->view('daftar_mhs/input_mhs',$data);
 		}
 	}
+	
+	function delete($id){
+		$this->m_daftar_mhs->delete($id);
+		redirect('daftar_mhs/view');
+	}
 }

@@ -25,4 +25,9 @@ function get_data(){
 		return $this->db->insert('mahasiswa',$data);
 		//return $this->db->update('tm_mahasiswa',$data);
 	}
+	
+		function delete($id){
+		$this->db->where('nim', $id);
+        return $this->db->delete('mahasiswa');
+	}
 }

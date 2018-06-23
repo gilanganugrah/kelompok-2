@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Jun 2018 pada 06.16
--- Versi Server: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: 23 Jun 2018 pada 14.24
+-- Versi Server: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,13 +35,6 @@ CREATE TABLE `bimbingan` (
   `nip` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `bimbingan`
---
-
-INSERT INTO `bimbingan` (`id_bimbingan`, `id_ta`, `nim`, `nip`) VALUES
-(1, 2, 'E31160622', '12344');
-
 -- --------------------------------------------------------
 
 --
@@ -61,8 +54,7 @@ CREATE TABLE `deadline` (
 
 INSERT INTO `deadline` (`id_jadwal`, `nm_jadwal`, `tgl_input`, `tgl_batas`) VALUES
 ('01', 'Penginputan Judul', '2018-06-01', '2018-06-22'),
-('02', 'Batas Penginputan Judul', '2018-06-24', '2018-06-29'),
-('03', 'aku', '2018-09-01', '2018-09-02');
+('02', 'Batas Penginputan Judul', '2018-06-24', '2018-06-29');
 
 -- --------------------------------------------------------
 
@@ -127,9 +119,7 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `gol`, `id_prodi`, `id_login`) VALUES
-('E089132', 'Dayat', 'B', 2, 17),
-('E31160607', 'Gilang', 'B', 1, 17),
-('E31160622', 'Gilang', 'B', 1, 17);
+('E31160607', 'Gilang', 'B', 1, 17);
 
 -- --------------------------------------------------------
 
@@ -186,13 +176,6 @@ CREATE TABLE `proposal` (
   `nim` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `proposal`
---
-
-INSERT INTO `proposal` (`id_proposal`, `tanggal`, `waktu`, `tempat`, `gambar`, `nim`) VALUES
-(1, '2018-05-07', '06:26:16', 'asd', 'asd', 'E31160622');
-
 -- --------------------------------------------------------
 
 --
@@ -205,13 +188,6 @@ CREATE TABLE `review` (
   `status` varchar(225) NOT NULL,
   `id_ta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `review`
---
-
-INSERT INTO `review` (`id_review`, `hasil_review`, `status`, `id_ta`) VALUES
-(1, 'sukses', 'benar', 2);
 
 -- --------------------------------------------------------
 
@@ -229,14 +205,6 @@ CREATE TABLE `ta` (
   `id_penelitian` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `ta`
---
-
-INSERT INTO `ta` (`id_ta`, `judul`, `tgl_input`, `deskripsi`, `nim`, `nip`, `id_penelitian`) VALUES
-(2, 'asd', '2018-05-07', 'dasdasdad', 'E31160622', '12344', NULL),
-(3, 'wqeq', '2018-05-01', 'wqeqwe', 'E31160622', '12344', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -252,14 +220,6 @@ CREATE TABLE `ta_final` (
   `nip` varchar(20) NOT NULL,
   `id_penelitian` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `ta_final`
---
-
-INSERT INTO `ta_final` (`id_final`, `judul`, `tgl_input`, `deskripsi`, `nim`, `nip`, `id_penelitian`) VALUES
-(6, 'asd', '2018-05-01', 'tghrthgdf', 'E31160622', '12344', 1),
-(7, 'ewrfertgetr', '2018-05-16', 'ewfwefg', 'E31160622', '12344', NULL);
 
 --
 -- Indexes for dumped tables
@@ -354,49 +314,41 @@ ALTER TABLE `ta_final`
 --
 ALTER TABLE `bimbingan`
   MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `penelitian`
 --
 ALTER TABLE `penelitian`
   MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
   MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `proposal`
 --
 ALTER TABLE `proposal`
   MODIFY `id_proposal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
   MODIFY `id_review` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `ta`
 --
 ALTER TABLE `ta`
   MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `ta_final`
 --
 ALTER TABLE `ta_final`
-  MODIFY `id_final` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id_final` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --

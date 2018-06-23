@@ -31,7 +31,8 @@ class judul_fix extends CI_Controller{
 			$x =$this->m_judul_fix->get_mhs();
 			$data = array(
 				'nama'=>$this->m_judul_fix->get_mhs(),
-				'nama_dosen'=>$this->m_judul_fix->get_dosen()
+				'nama_dosen'=>$this->m_judul_fix->get_dosen(),
+				'judul_penelitian'=>$this->m_judul_fix->get_penelitian()
 				);
 			//var_dump($x);
 			echo "<script> alert('Gagal Mendaftar!!')</script>";

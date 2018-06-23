@@ -1,3 +1,4 @@
+
 <div class="col-lg-20">
                     <div class="card">
                         <div class="card-header">
@@ -8,11 +9,12 @@
                               <thead class="thead-dark">
 				<tr>
 				<th>No</th>
-					<th>NIM</th>
-					<th>Nama</th>
-					<th>GOL</th>
-					<th>Prodi</th>
+					<th>ID_Login</th>
+					<th>Email</th>
 					<th>Username</th>
+					<th>Password</th>
+					<th>Level</th>
+                    <th>Nama</th>
                     <th colspan="2" bgcolor="#FF3333">Aksi</th>
 					
 				</tr>
@@ -21,18 +23,22 @@
                 foreach ($data as $row): ?>
 				<tr>
 					<td><?php echo $no;?></td>
-					<td><?php echo $row->nim;?></td>
-					<td><?php echo $row->nama;?></td>
-					<td><?php echo $row->gol;?></td>
-					<td><?php echo $row->nama_prodi;?></td>
+					<td><?php echo $row->id_login;?></td>
+					<td><?php echo $row->email;?></td>
 					<td><?php echo $row->username;?></td>
-					<td><a href="<?php echo base_url(); ?>daftar_mhs/delete/<?php echo $row->nim;?>">Hapus</a></td>
+					<td><?php echo $row->password;?></td>
+					<td><?php echo $row->level;?></td>
+                    <td><?php echo $row->nama;?></td>
+					<td><a href="<?php echo base_url(); ?>akun/delete/<?php echo $row->id_login;?>">Hapus</a></td>
 					
 				</tr>
 				
 				<?php $no++;
                 endforeach;?>
 			</table>
- </div>
-                    </div>
-                </div>
+            <span class="login100-form-title p-b-59">
+						<a href="<?php echo base_url('akun/tambah');?>"><h3 align="center"><font color="#FF3333">Tambah Data</font></h3></a>
+					</span>
+		 </div>
+	</div>
+</div>

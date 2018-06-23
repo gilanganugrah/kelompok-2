@@ -51,8 +51,8 @@
 						<div class="wrap-input100 validate-input" data-validate = "Judul Peneliltian Dosen Harap Diisi">
 						<span class="label-input100">Judul Penelitian Dosen</span><br><br>
 						<select name="judul_penelitian">
-                        <option>	</option>
-        				<?php foreach ($id_penelitian as $row){ ?>
+                        <?php foreach ($id_penelitian as $row){ ?>
+                        <option value="NULL"> </option>
         				<option value="<?php echo $row->id_penelitian;?>"><?php echo $row->judul_penelitian;?></option>
         				<?php }?>
         				</select>

@@ -117,6 +117,12 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-file-word-o"></i><a href="font-fontawesome.html">Cetak Laporan</a>        
                         </ul>
                     </li>
+                     <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Kelola Akun</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-spinner"></i><a href="<?php echo base_url('akun/index');?>">Akun</a>        
+                        </ul>
+                    </li>
                     <?php endif; ?>
                     <h3 class="menu-title">LOGOUT</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
