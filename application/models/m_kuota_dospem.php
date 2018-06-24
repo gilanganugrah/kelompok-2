@@ -6,20 +6,23 @@ class m_kuota_dospem extends CI_Model {
     }
   
 	function get_data(){
-	
-	$this->db->select('*'); 
-    $this->db->from('dosen'); 
-    $data = $this->db->get(); 
-    return $data->result(); 
+	$query = $this->db->query("SELECT dosen.nip ,dosen.nama_dosen, dosen.kuota, prodi.nama_prodi FROM dosen,prodi WHERE dosen.id_prodi = prodi.id_prodi");
+		return $query->result();	
 	}
 	
-	function edit_data($where,$table){		
-		return $this->db->get_where($table,$where);
+	function get_prodi(){
+		$query = $this->db->query("SELECT * FROM prodi");
+		return $query->result();
+	}
+	
+	function get_data_edit($id){
+		$query = $this->db->query("SELECT * FROM dosen WHERE nip = '$id'");
+		return $query->result_array();
 	}
 
-	function update_data($where,$data,$table){
-		$this->db->where($where);
-		$this->db->update($table,$data);
+	function update($data = array(),$id){
+		$this->db->where('nip',$id);
+		return $this->db->update('dosen',$data);
 	}
 	}
 ?>

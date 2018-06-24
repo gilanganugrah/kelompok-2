@@ -15,30 +15,30 @@ class kuota_dospem extends CI_Controller{
 		$this->load->view('kuota_max_dospem/v_kuota_dospem',$data);
 	}
 	
-	function edit($nip){
-		$where = array('nip' => $nip);
-		$data['dosen'] = $this->m_kuota_dospem->edit_data($where,'dosen')->result();
-		$this->load->view('kuota_max_dospem/v_edit',$data);
+	function edit(){
+		$id = $this->uri->segment(3);
+		$data = array(
+            'user' => $this->m_kuota_dospem->get_data_edit($id),
+		);
+        //var_dump($data);
+     	$data['id_prodi']= $this->m_kuota_dospem->get_prodi();
+     	$data['nama_prodi']= $this->m_kuota_dospem->get_prodi();
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
+        $this->load->view("kuota_max_dospem/v_edit", $data);
+	
+		
 	}
 	
 	function update(){
-	$nip = $this->input->post('nip');
-	$nama_dosen = $this->input->post('nama_dosen');
-	$prodi = $this->input->post('prodi');
-	$kuota = $this->input->post('kuota');
-
-	$data = array(
-		'nama_dosen' => $nama_dosen,
-		'prodi' => $prodi,
-		'kuota' => $kuota
-	);
-
-	$where = array('nip' => $nip);
-	
-
-	$this->m_kuota_dospem->update_data($where,$data,'dosen');
-	redirect('kuota_dospem/index');
-}
-
+		$id = $this->input->post('nip');
+		$insert = $this->m_kuota_dospem->update(array(
+                
+				'nama_dosen' => $this->input->post('nama_dosen'),
+				'kuota' => $this->input->post('kuota'),
+				'id_prodi' => $this->input->post('nama_prodi')
+            ), $id);
+        redirect('kuota_dospem/index');
+        }
 }
 ?>

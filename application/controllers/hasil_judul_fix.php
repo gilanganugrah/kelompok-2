@@ -10,6 +10,8 @@ class hasil_judul_fix extends CI_Controller{
 	function index(){
 	$data = array(
 		'data'=>$this->m_hasil_judul_fix->get_data());
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
 		$this->load->view('hasil_judul_fix/v_hasil_judul_fix',$data);
 	}
 	}

@@ -22,7 +22,7 @@
 					</div>
                     <div class="wrap-input100 validate-input" data-validate = "judul Harap Diisi">
 						<span class="label-input100">Deskripsi</span>
-						<input class="input100" type="text" name="deskripsi" placeholder="Deskripsi...">
+						<textarea name="deskripsi" class="input100" placeholder="Deskripsi..."></textarea>
 						<span class="focus-input100"></span>
 					</div>
 

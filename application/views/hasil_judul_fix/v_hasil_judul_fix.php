@@ -1,12 +1,12 @@
-<html>
-	<head>
-		<title>Daftar Judul dan Dosen Pembimbing yang Sudah Fix</title>
-	</head>
-	<body>
-		<p><h3 align="center">Daftar Judul dan Dosen Pembimbing yang Sudah Fix</h3></p>
-		
-		<p align="center">
-			<table border="1">
+
+<div class="col-lg-20">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Hasil Judul FIX</strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                              <thead class="thead-dark">
 				<tr>
 				<th>No</th>
 					<th>NIM</th>

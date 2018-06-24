@@ -22,10 +22,10 @@
 					<td><?php echo $no;?></td>
 					<td><?php echo $row->nip;?></td>
 					<td><?php echo $row->nama_dosen;?></td>
-					<td><?php echo $row->prodi;?></td>
+					<td><?php echo $row->nama_prodi;?></td>
 					<td><?php echo $row->kuota;?></td>
 					<td>
-						<?php echo anchor('kuota_dospem/edit/'.$row->nip,'Edit'); ?>
+					<td><a href="<?php echo base_url(); ?>kuota_dospem/edit/<?php echo $row->nip;?>">Edit</a></td>
 					</td>
 				</tr>
 				
