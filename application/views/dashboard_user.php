@@ -57,7 +57,7 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-bars"></i><a href="<?php echo base_url('hasil_review/index');?>">Hasil Review</a></li>
                             <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index');?>">Pengajuan Judul FIX</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Hasil Judul FIX</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-alerts.html">Pendaftaran Sempro</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url('sempro/index');?>">Pendaftaran Sempro</a></li>
 							<li><i class="fa fa-table"></i><a href="<?php echo base_url('tgl_judul/mhs');?>">Penentuan Tgl Input Judul</a></li>
 
                         </ul>
@@ -67,8 +67,16 @@ if($this->session->userdata('username') == ""){
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Dosen</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Daftar Dosen</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Input Judul Penelitian</a></li>
+                        <?php if($this->session->userdata('lvl') === 'koordinator'):?>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_dosen/index');?>">Daftar Dosen</a></li>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('penelitian/tabel');?>">Input Judul Penelitian</a></li>
+                             <?php endif; ?>
+                            <?php if($this->session->userdata('lvl') === 'dosen'):?>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_dosen/tambah');?>">Daftar Dosen</a></li>
+                            
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('penelitian/index');?>">Input Judul Penelitian</a></li>
+                            <?php endif; ?>
+                           
                             <li><i class="fa fa-spinner"></i><a href="<?php echo base_url('melihat_mahasiswa/index');?>">Output Judul TA</a></li>
                             <li><i class="fa fa-fire"></i><a href="ui-modals.html">Input Dospem Mahasiswa</a></li>
                         </ul>
@@ -78,9 +86,9 @@ if($this->session->userdata('username') == ""){
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Riviewer</a>
                         <ul class="sub-menu children dropdown-menu">
-                        	<li><i class="fa fa-table"></i><a href="tables-basic.html">Daftar Dosen</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Input Judul Penelitian</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Output Judul TA</a></li>
+                        	<li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_dosen/index');?>">Daftar Dosen</a></li>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('penelitian/tabel');?>">Input Judul Penelitian</a></li>
+                             <li><i class="fa fa-spinner"></i><a href="<?php echo base_url('melihat_mahasiswa/index');?>">Output Judul TA</a></li>
                             <li><i class="fa fa-fire"></i><a href="ui-modals.html">Input Dospem Mahasiswa</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="forms-basic.html">Review Judul</a></li>
                         </ul>
@@ -90,9 +98,9 @@ if($this->session->userdata('username') == ""){
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Koordinator</a>
                         <ul class="sub-menu children dropdown-menu">
-                        	<li><i class="fa fa-table"></i><a href="tables-basic.html">Daftar Dosen</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Input Judul Penelitian</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Output Judul TA</a></li>
+                        	<li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_dosen/index');?>">Daftar Dosen</a></li>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url('penelitian/tabel');?>">Input Judul Penelitian</a></li>
+                             <li><i class="fa fa-spinner"></i><a href="<?php echo base_url('melihat_mahasiswa/index');?>">Output Judul TA</a></li>
                             <li><i class="fa fa-fire"></i><a href="ui-modals.html">Input Dospem Mahasiswa</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="forms-basic.html">Review Judul</a></li>
                             <li><i class="fa fa-book"></i><a href="ui-switches.html">Pergantian Hak Akses Dosen</a></li>

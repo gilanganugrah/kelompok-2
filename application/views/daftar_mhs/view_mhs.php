@@ -33,6 +33,7 @@
 				<?php $no++;
                 endforeach;?>
 			</table>
+            
  </div>
                     </div>
                 </div>

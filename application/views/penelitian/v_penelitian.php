@@ -25,26 +25,29 @@
 					</div>
 
 					<div class="wrap-input100 validate-input">
-						<span class="label-input100">NIP</span>
-						<input class="input100" type="date" name="nip">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Kuota Mahasiswa</span><br><br>
 						<select name="kuota">
-        				<?php foreach ($nama as $row){ ?>
-        				<option value="<?php echo $row->nim;?>"> <?php echo $row->nama;?></option>
-        				<?php }?>
-        				</select>
+                        <option>	</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                  </select>     
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Nama Dosen</span><br><br>
-						<select name="nama_dosen">
-        				<?php foreach ($nama_dosen as $row){ ?>
-        				<option value="<?php echo $row->nip;?>"> <?php echo $row->nama_dosen;?></option>
+						<select name="nip">
+                        <option> </option>
+        				<?php foreach ($nip as $row){ ?>
+        				<option value="<?php echo $row->nip;?>"> <?php echo $row->nip;?></option>
         				<?php }?>
         				</select>
 						

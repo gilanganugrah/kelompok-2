@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Jun 2018 pada 14.24
+-- Generation Time: 24 Jun 2018 pada 11.21
 -- Versi Server: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -65,16 +65,19 @@ INSERT INTO `deadline` (`id_jadwal`, `nm_jadwal`, `tgl_input`, `tgl_batas`) VALU
 CREATE TABLE `dosen` (
   `nip` varchar(20) NOT NULL,
   `nama_dosen` varchar(225) NOT NULL,
-  `prodi` varchar(225) NOT NULL,
-  `kuota` varchar(20) NOT NULL
+  `kuota` varchar(20) NOT NULL,
+  `id_login` int(11) NOT NULL,
+  `id_prodi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `dosen`
 --
 
-INSERT INTO `dosen` (`nip`, `nama_dosen`, `prodi`, `kuota`) VALUES
-('12344', 'Supri', 'mif', '0');
+INSERT INTO `dosen` (`nip`, `nama_dosen`, `kuota`, `id_login`, `id_prodi`) VALUES
+('123123', 'Samsul', '4', 19, 1),
+('1312312', 'Gilang', '1', 19, 3),
+('E32112', 'Gilang', '4', 19, 2);
 
 -- --------------------------------------------------------
 
@@ -96,9 +99,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_login`, `email`, `username`, `password`, `level`, `nama`) VALUES
-(17, 'ucihagilang74@gmail.com', 'admin', '123', 'mahasiswa', 'admin'),
-(18, 'ucihagilang74@gmail.com', 'E31160622', '123', 'koordinator', 'Gilang Anugrah'),
-(19, 'ucihagilang74@gmail.com', 'dosen', '123', 'dosen', 'Pak Dosen');
+(17, 'ucihagilang74@gmail.com', 'mahasiswa', '123', 'mahasiswa', 'admin'),
+(18, 'ucihagilang74@gmail.com', 'koordinator', '123', 'koordinator', 'Gilang Anugrah'),
+(19, 'ucihagilang74@gmail.com', 'dosen', '123', 'dosen', 'Pak Dosen'),
+(20, 'ucihagilangy75@gmail.com', 'reviewer', '123', 'reviewer', 'Dimas');
 
 -- --------------------------------------------------------
 
@@ -139,7 +143,7 @@ CREATE TABLE `penelitian` (
 --
 
 INSERT INTO `penelitian` (`id_penelitian`, `judul_penelitian`, `kuota`, `nip`) VALUES
-(1, 'bukber', 1, '12344');
+(2, 'adssdva', 3, '123123');
 
 -- --------------------------------------------------------
 
@@ -172,9 +176,18 @@ CREATE TABLE `proposal` (
   `tanggal` date NOT NULL,
   `waktu` time NOT NULL,
   `tempat` varchar(255) NOT NULL,
-  `gambar` varchar(255) NOT NULL,
+  `file` varchar(2550) DEFAULT NULL,
   `nim` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `proposal`
+--
+
+INSERT INTO `proposal` (`id_proposal`, `tanggal`, `waktu`, `tempat`, `file`, `nim`) VALUES
+(12, '2018-06-01', '12:21:00', 'jember', 'logo polije.png', 'E31160607'),
+(13, '2018-06-15', '12:21:00', 'jember', '9_Dota2-Rubick.jpg', 'E31160607'),
+(14, '2018-06-20', '12:12:00', 'jember', 'IMG_0065.JPG', 'E31160607');
 
 -- --------------------------------------------------------
 
@@ -244,7 +257,9 @@ ALTER TABLE `deadline`
 -- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
-  ADD PRIMARY KEY (`nip`);
+  ADD PRIMARY KEY (`nip`),
+  ADD KEY `id_login` (`id_login`),
+  ADD KEY `id_prodi` (`id_prodi`);
 
 --
 -- Indexes for table `login`
@@ -313,7 +328,7 @@ ALTER TABLE `ta_final`
 -- AUTO_INCREMENT for table `bimbingan`
 --
 ALTER TABLE `bimbingan`
-  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -323,7 +338,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `penelitian`
 --
 ALTER TABLE `penelitian`
-  MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_penelitian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `prodi`
 --
@@ -333,22 +348,22 @@ ALTER TABLE `prodi`
 -- AUTO_INCREMENT for table `proposal`
 --
 ALTER TABLE `proposal`
-  MODIFY `id_proposal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_proposal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id_review` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_review` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ta`
 --
 ALTER TABLE `ta`
-  MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ta_final`
 --
 ALTER TABLE `ta_final`
-  MODIFY `id_final` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_final` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -360,6 +375,13 @@ ALTER TABLE `bimbingan`
   ADD CONSTRAINT `bimbingan_ibfk_1` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `bimbingan_ibfk_2` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `bimbingan_ibfk_3` FOREIGN KEY (`id_ta`) REFERENCES `ta` (`id_ta`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `dosen`
+--
+ALTER TABLE `dosen`
+  ADD CONSTRAINT `dosen_ibfk_1` FOREIGN KEY (`id_login`) REFERENCES `login` (`id_login`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `dosen_ibfk_2` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `mahasiswa`
