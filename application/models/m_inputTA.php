@@ -1,15 +1,6 @@
 <?php
 class m_inputTA extends CI_Model {
 	
-	function get_table(){
-        return $this->db->get("ta");
-    }
-    
-	function get_data(){
-		$query = $this->db->query("SELECT * FROM ta");
-		return $query->result();
-	}
-	
 	function get_mhs(){
 		$query = $this->db->query("SELECT * FROM mahasiswa");
 		return $query->result();
@@ -26,7 +17,7 @@ class m_inputTA extends CI_Model {
 	
 	function input($data = array()){
 		return $this->db->insert('ta',$data);
-		//return $this->db->update('ta',$data);
+		//return $this->db->update('tm_mahasiswa',$data);
 	}
 	
 
