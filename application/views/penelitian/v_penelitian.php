@@ -25,29 +25,30 @@
 					</div>
 
 					<div class="wrap-input100 validate-input">
+						<span class="label-input100">NIP</span>
+						<input class="input100" type="date" name="nip">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Kuota Mahasiswa</span><br><br>
 						<select name="kuota">
-        				<option>1</option>
-        				<option>2</option>
-        				<option>3</option>
-        				<option>4</option>
-        				<option>5</option>
-        				<option>6</option>
-        				<option>7</option>
-        				<option>8</option>
+        				<?php foreach ($nama as $row){ ?>
+        				<option value="<?php echo $row->nim;?>"> <?php echo $row->nama;?></option>
+        				<?php }?>
         				</select>
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Nama Dosen Harap Diisi">
+					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Nama Dosen</span><br><br>
 						<select name="nama_dosen">
-                        <option>	</option>
-        				<?php foreach ($nip as $row){ ?>
+        				<?php foreach ($nama_dosen as $row){ ?>
         				<option value="<?php echo $row->nip;?>"> <?php echo $row->nama_dosen;?></option>
         				<?php }?>
         				</select>
-                    </div>
+						
+					</div>
                         	
 				
 					<div class="flex-m w-full p-b-33">
