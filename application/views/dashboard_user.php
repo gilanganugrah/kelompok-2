@@ -90,7 +90,7 @@ if($this->session->userdata('username') == ""){
                             <li><i class="fa fa-table"></i><a href="<?php echo base_url('penelitian/tabel');?>">Input Judul Penelitian</a></li>
                              <li><i class="fa fa-spinner"></i><a href="<?php echo base_url('melihat_mahasiswa/index');?>">Output Judul TA</a></li>
                             <li><i class="fa fa-fire"></i><a href="ui-modals.html">Input Dospem Mahasiswa</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="forms-basic.html">Review Judul</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url('reviewjudul/index');?>">Review Judul</a></li>
                         </ul>
                     </li>
                     <?php endif; ?>
