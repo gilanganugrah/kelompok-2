@@ -10,7 +10,7 @@ function __construct()
 		$this->load->view('dashboard_user');
 		$this->load->view('header');
 		$data['id_ta'] = $this->m_review_judul->get_ta();
-		$data['id_ta'] = $this->m_review_judul->get_ta();
+		
 		
 		$this->load->view('review_judul_reviewer/v_review_judul',$data);
 	}
@@ -18,11 +18,10 @@ function __construct()
 	function input(){
 		if (isset($_POST['btnTambah'])){
 			$data = $this->m_review_judul->input(array (
-			'id_review' => $this->input->post('id_review'),
 			'id_ta' => $this->input->post('judul'),
 			'hasil_review' => $this->input->post('hasil_review'),
-			'status' => $this->input->post('status'),
-			'id_ta' => $this->input->post('id_ta')));
+			'status' => $this->input->post('status')));
+
 			
 			echo "<script> alert('Anda Berhasil Daftar!!')</script>";
 			redirect('reviewjudul/index','refresh');
@@ -30,7 +29,7 @@ function __construct()
 		else{
 			$x =$this->m_review_judul->get_ta();
 			$data = array(
-				'id_ta'=>$this->m_review_judul->get_ta(),
+				
 				'judul'=>$this->m_review_judul->get_ta()
 				);
 			//var_dump($x);
