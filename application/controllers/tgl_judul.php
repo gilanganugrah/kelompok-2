@@ -24,35 +24,40 @@ class tgl_judul extends CI_Controller{
 	}
 	
 	function tambah(){
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
 		$this->load->view('v_input');
 	}
 	
-	function tambah_aksi(){
-		$id_jadwal = $this->input->post('id_jadwal');
-		$nm_jadwal= $this->input->post('nm_jadwal');
-		$tgl_input = $this->input->post('tgl_input');
-		$tgl_batas = $this->input->post('tgl_batas');
- 
-		$data = array(
-			'id_jadwal' => $id_jadwal,
-			'nm_jadwal' => $nm_jadwal,
-			'tgl_input' => $tgl_input,
-			'tgl_batas' => $tgl_batas
-			);
-		$this->m_tgl_judul->input_data($data,'deadline');
-		redirect('tgl_judul/index');
-	}
+	function input(){
+			if (isset($_POST['btnTambah'])){
+			$data = $this->m_tgl_judul->input(array (
+			'nm_jadwal' => $this->input->post('nm_jadwal'),
+			'tgl_input' => $this->input->post('tgl_input'),
+			'tgl_batas' => $this->input->post('tgl_batas')));
+			
+			echo "<script> alert('Anda Berhasil Daftar!!')</script>";
+			redirect('tgl_judul/index','refresh');
+		}
+		else{
+			//var_dump($x);
+			echo "<script> alert('Gagal Mendaftar!!')</script>";
+			$this->load->view('tgl_judul/index',$data);
+		}
+		}
 	
-	function hapus($id_jadwal){
-		$where = array('id_jadwal' => $id_jadwal);
-		$this->m_tgl_judul->hapus_data($where,'deadline');
+	function delete($id){
+		$this->m_tgl_judul->delete($id);
 		redirect('tgl_judul/index');
 	}
  
-	function edit($id_jadwal){
-		$where = array('id_jadwal' => $id_jadwal);
-		$data['deadline'] = $this->m_tgl_judul->edit_data($where,'deadline')->result();
-		$this->load->view('v_edit',$data);
+function edit($id_jadwal){
+	$where = array('id_jadwal' => $id_jadwal);
+	$data['user'] = $this->m_tgl_judul->edit_data($where,'deadline')->result();
+	$this->load->view('dashboard_user');
+		$this->load->view('header');
+	$this->load->view('v_edit',$data);
+ 		
 	}
 	
 	function update(){
@@ -60,17 +65,19 @@ class tgl_judul extends CI_Controller{
 	$nm_jadwal = $this->input->post('nm_jadwal');
 	$tgl_input = $this->input->post('tgl_input');
 	$tgl_batas = $this->input->post('tgl_batas');
-
+ 
 	$data = array(
 		'nm_jadwal' => $nm_jadwal,
 		'tgl_input' => $tgl_input,
 		'tgl_batas' => $tgl_batas
 	);
-
-	$where = array('id_jadwal' => $id_jadwal);
-	
-
+ 
+	$where = array(
+		'id_jadwal' => $id_jadwal
+	);
+ 
 	$this->m_tgl_judul->update_data($where,$data,'deadline');
+	echo "<script> alert('Anda Berhasil EDIT!!')</script>";
 	redirect('tgl_judul/index');
 }
 }
