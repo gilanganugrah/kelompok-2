@@ -21,24 +21,35 @@
 						<span class="focus-input100"></span>
 					</div>
                     
-                    
                     <div class="wrap-input100 validate-input">
 						<span class="label-input100">Prodi</span>
-                     <?php
-        					echo '<select class="form-control" name="nama_prodi">';
-            				foreach($nama_prodi as $rows)
-         				   {
-               				 if($rows->id==@$user[0]['id_prodi']){
-                   			 echo '<option value="'.$rows->id.'" selected="selected">'.$rows->nama_prodi.'</option>';
-               				 }else{
-                    		echo '<option value="'.$rows->id.'">'.$rows->nama_prodi.'</option>';
-              					  }
-           						 }
-           					 echo '</select>';
-       				 ?>
-       				<span class="focus-input100"></span>
+						<input class="input100" name="id_prodi" value="<?php echo @$user[0]['id_prodi']; ?>">
+						<span class="focus-input100"></span>
 					</div>
-        
+                    
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100">Kuota</span>
+						<input class="input100" name="kuota" value="<?php echo @$user[0]['kuota']; ?>">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100">ID Login</span>
+						<input class="input100" name="id_login" value="<?php echo @$user[0]['id_login']; ?>">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100">Username</span>
+						<input class="input100" name="username" value="<?php echo @$user[0]['username']; ?>">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100">Level</span>
+						<input class="input100" name="level" value="<?php echo @$user[0]['level']; ?>">
+						<span class="focus-input100"></span>
+					</div>
 	
 					<div class="flex-m w-full p-b-33">
 						<div class="contact100-form-checkbox">
