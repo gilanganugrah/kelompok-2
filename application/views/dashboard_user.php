@@ -55,7 +55,12 @@ if($this->session->userdata('username') == ""){
                          <li><i class="fa fa-table"></i><a href="<?php echo base_url('daftar_judul/index');?>">Daftar Judul Dosen</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url('inputTA/index');?>">Input Judul TA</a></li>
                             <li><i class="fa fa-bars"></i><a href="<?php echo base_url('hasil_review/index');?>">Hasil Review</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index');?>">Pengajuan Judul FIX</a></li>
+                          <?php if($this->session->userdata('lvl') === 'mahasiswa'):?>
+                          <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index');?>">Pengajuan Judul FIX</a></li>
+                          <?php endif; ?>
+                           <?php if($this->session->userdata('lvl') === 'koordinator'):?>
+                            <li><i class="fa fa-share-square-o"></i><a href="<?php echo base_url('judul_fix/index_koor');?>">Pengajuan Judul FIX</a></li>
+                              <?php endif; ?>
                             <li><i class="fa fa-id-card-o"></i><a href="<?php echo base_url('hasil_judul_fix/index');?>">Hasil Judul FIX</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url('sempro/index');?>">Pendaftaran Sempro</a></li>
 							<li><i class="fa fa-table"></i><a href="<?php echo base_url('tgl_judul/mhs');?>">Penentuan Tgl Input Judul</a></li>

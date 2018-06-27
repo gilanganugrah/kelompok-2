@@ -6,13 +6,27 @@ class judul_fix extends CI_Controller{
 		$this->load->helper(array('url'));
 		$this->load->model('m_judul_fix');
 	}
-	function index(){
+	function tambah(){
 		$this->load->view('dashboard_user');
 		$this->load->view('header');
 		$data['nim'] = $this->m_judul_fix->get_mhs();
 		$data['nip'] = $this->m_judul_fix->get_dosen();
 		$data['id_penelitian'] = $this->m_judul_fix->get_penelitian();
 		$this->load->view('judul_fix/input_fix',$data);
+	}
+	function index_koor(){
+		$data = array(
+		'data'=>$this->m_judul_fix->get_data());
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
+		$this->load->view('judul_fix/v_judul_fix_koor',$data);
+	}
+	function index(){
+		$data = array(
+		'data'=>$this->m_judul_fix->get_data());
+		$this->load->view('dashboard_user');
+		$this->load->view('header');
+		$this->load->view('judul_fix/v_judul_fix',$data);
 	}
 	
 	function input(){
@@ -38,5 +52,9 @@ class judul_fix extends CI_Controller{
 			echo "<script> alert('Gagal Mendaftar!!')</script>";
 			$this->load->view('judul_fix/input_fix',$data);
 		}
+	}
+	function delete($id){
+		$this->m_judul_fix->delete($id);
+		redirect('judul_fix/index');
 	}
 }
