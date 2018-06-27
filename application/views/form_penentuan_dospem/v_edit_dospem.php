@@ -24,15 +24,6 @@
 					<td><input type="text" name="Prodi" value="<?php echo $row->nama?>"></td>
 			</tr>
 			<tr>
-					<td>Prodi</td>
-					<td><input type="text" name="Kuota" value="<?php echo $row->nama_prodi?>"></td>
-			</tr>
-			
-			<tr>
-					<td>Judul</td>
-					<td><input type="text" name="Kuota" value="<?php echo $row->judul ?>"></td>
-			</tr>
-			<tr>
 				<td></td>
 				<td><input type="submit" value="Simpan"></td>
 			</tr>
