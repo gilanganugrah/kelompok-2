@@ -11,28 +11,36 @@
                     
                     <div class="wrap-input100 validate-input" data-validate = "Judul Peneliltian Dosen Harap Diisi">
 						<span class="label-input100">Judul</span><br><br>
-						<select name="judul_penelitian">
+						<select name="id_ta">
+                        <option>	</option>
+                        <?php foreach ($id_ta as $row){ ?>
+        				<option value="<?php echo $row->id_ta;?>"><?php echo $row->id_ta;?></option>
+        				<?php }?>
+        				</select>
+                        <select name="judul">
                         <option>	</option>
                         <?php foreach ($id_ta as $row){ ?>
         				<option value="<?php echo $row->id_ta;?>"><?php echo $row->judul;?></option>
         				<?php }?>
         				</select>
+                        
+                        
+						<span class="focus-input100"></span>
+					</div>
+                 
+                    <div class="wrap-input100 validate-input">
+						<span class="label-input100">Status</span><br>
+                        <input class="input100" type="text" name="status" placeholder="Terima/Tolak/Terima Dengan Perbaikan">
 						<span class="focus-input100"></span>
 					</div>
                   
 
 					<div class="wrap-input100 validate-input" data-validate>
 						<span class="label-input100">Hasil Review</span><br>
-						<textarea name="hasil_review" class="input100" placeholder="Deskripsi..."></textarea>
+						<textarea name="hasil_review" class="input100" placeholder="Hasil Review"></textarea>
 						<span class="focus-input100"></span>
 					</div>
-                    <div class="wrap-input100 validate-input">
-						<span class="label-input100">Status</span><br>
-                        <input class="input100" type="text" name="status" placeholder="Terima / Tidak">
-						<span class="focus-input100"></span>
-					</div>
-
-					
+         
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
