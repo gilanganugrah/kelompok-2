@@ -7,7 +7,7 @@
 
 				<form  class="login100-form validate-form" action="<?php echo base_url()?>kuota_dospem/update" method="post">
 					<span class="login100-form-title p-b-59">
-						INPUT JUDUL FIX
+						JUMLAH MAX SETIAP DOSEN PEMBIMBING
 					</span>
                     <div class="wrap-input100 validate-input">
 						<span class="label-input100">NIP</span>
@@ -70,11 +70,11 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" type="submit" name="btnTambah">
-								Daftar
+								Simpan
 							</button>
 						</div>
 
-						<a href="<?php echo base_url('kuota_dospem/index'); ?>" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+						<a href="<?php echo base_url('kuota_dospem/update'); ?>" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
 							Batal
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
