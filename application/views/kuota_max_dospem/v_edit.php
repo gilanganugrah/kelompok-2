@@ -38,7 +38,25 @@
        				 ?>
        				<span class="focus-input100"></span>
 					</div>
-        
+					
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100">Login</span>
+                     <?php
+        					echo '<select class="form-control" name="id_login">';
+            				foreach($id_login as $rows)
+         				   {
+               				 if($rows->id==@$user[0]['id_login']){
+                   			 echo '<option value="'.$rows->id.'" selected="selected">'.$rows->id_login.'</option>';
+               				 }else{
+                    		echo '<option value="'.$rows->id.'">'.$rows->id_login.'</option>';
+              					  }
+           						 }
+           					 echo '</select>';
+       				 ?>
+       				<span class="focus-input100"></span>
+					</div>
+					
+					
                     <div class="wrap-input100 validate-input">
 						<span class="label-input100">Kuota</span><br><br>
                         <select name="kuota">

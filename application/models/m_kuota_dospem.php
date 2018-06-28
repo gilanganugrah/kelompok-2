@@ -6,12 +6,17 @@ class m_kuota_dospem extends CI_Model {
     }
   
 	function get_data(){
-	$query = $this->db->query("SELECT dosen.nip ,dosen.nama_dosen, dosen.kuota, prodi.nama_prodi FROM dosen,prodi WHERE dosen.id_prodi = prodi.id_prodi");
+	$query = $this->db->query("SELECT dosen.nip ,dosen.nama_dosen, dosen.kuota, prodi.nama_prodi, login.id_login FROM dosen,prodi,login WHERE dosen.id_prodi = prodi.id_prodi and dosen.id_login = login.id_login");
 		return $query->result();	
 	}
 	
 	function get_prodi(){
 		$query = $this->db->query("SELECT * FROM prodi");
+		return $query->result();
+	}
+	
+	function get_login(){
+		$query = $this->db->query("SELECT * FROM login");
 		return $query->result();
 	}
 	

@@ -23,6 +23,7 @@ class kuota_dospem extends CI_Controller{
         //var_dump($data);
      	$data['id_prodi']= $this->m_kuota_dospem->get_prodi();
      	$data['nama_prodi']= $this->m_kuota_dospem->get_prodi();
+		$data['id_login']= $this->m_kuota_dospem->get_login();
 		$this->load->view('dashboard_user');
 		$this->load->view('header');
         $this->load->view("kuota_max_dospem/v_edit", $data);
@@ -36,7 +37,8 @@ class kuota_dospem extends CI_Controller{
                 
 				'nama_dosen' => $this->input->post('nama_dosen'),
 				'kuota' => $this->input->post('kuota'),
-				'id_prodi' => $this->input->post('nama_prodi')
+				'id_prodi' => $this->input->post('nama_prodi'),
+				'id_login' => $this->input->post('id_login'),
             ), $id);
         redirect('kuota_dospem/index');
         }
